@@ -4,6 +4,8 @@ This is the official HiFi CMS API component for PHP. It lets you fetch, put, and
 
 ## Install
 
+Install the HiFi CMS API component with Composer:
+
     composer require nmcteam/hifi-api
 
 ## Usage
