@@ -1,42 +1,46 @@
 # HiFi CMS API component for PHP
 
-This is the official HiFi CMS API component for PHP. It lets you fetch, put, and delete HiFi CMS website content from a remote destination.
+This is the official [HiFi CMS](http://www.gethifi.com) API component for PHP. It lets you fetch, put, and delete HiFi CMS website content from a remote destination.
 
 ## Install
 
 Install the HiFi CMS API component with Composer:
 
-    composer require nmcteam/hifi-api
+```console
+composer require nmcteam/hifi-api
+```
 
 ## Usage
 
-    <?php
-    $hifi = new \Hifi\Api('www.example.com', 'username', 'password');
+```php
+<?php
+$hifi = new \Hifi\Api('www.example.com', 'username', 'password');
 
-    // Fetch content
-    $hits = $hifi->get([
-        'type' => 'page'
-    ]);
-    foreach ($hits as $hit) {
-        echo $hit->title;
-    }
+// Fetch content
+$hits = $hifi->get([
+    'type' => 'page'
+]);
+foreach ($hits as $hit) {
+    echo $hit->title;
+}
 
-    // Create or update content
-    $hifi->post([
-        [
-            'type' => 'page',
-            'title' => 'New page',
-            'content' => 'Content goes here',
-            'parent' => 'a24c85d34ce9437bbfc9db696ccee814'
-        ]
-    ]);
+// Create or update content
+$hifi->post([
+    [
+        'type' => 'page',
+        'title' => 'New page',
+        'content' => 'Content goes here',
+        'parent' => 'a24c85d34ce9437bbfc9db696ccee814'
+    ]
+]);
 
-    // Delete content
-    $hifi->delete([
-        [
-            'id' => 'a24c85d34ce9437bbfc9db696ccee814'
-        ]
-    ]);
+// Delete content
+$hifi->delete([
+    [
+        'id' => 'a24c85d34ce9437bbfc9db696ccee814'
+    ]
+]);
+```
 
 ## Author
 
